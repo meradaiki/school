@@ -6,20 +6,21 @@
   <title>友人共有カレンダー</title>
   <style>
     :root{--blue:#2563eb;--blue-dark:#1d4ed8;--bg:#f3f6fb;--surface:#fff;--text:#1f2937;--muted:#64748b;--line:#e2e8f0;--shadow:0 4px 18px rgba(15,23,42,.06)}
-    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5}button,input,textarea,select{font:inherit}button{cursor:pointer}.app{max-width:1180px;margin:0 auto;padding:18px}.hero{background:linear-gradient(135deg,#2563eb,#1e40af);color:#fff;border-radius:16px;padding:22px 24px;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}.hero h1{margin:0;font-size:clamp(1.35rem,3vw,1.8rem)}.hero p{margin:4px 0 0;color:#dbeafe;font-size:.92rem}.header-actions,.month-controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);margin-top:16px;overflow:hidden}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 18px;border-bottom:1px solid var(--line);flex-wrap:wrap}.panel-head h2{margin:0;font-size:1.08rem}.month-label{min-width:145px;text-align:center;font-weight:750;font-size:1.1rem}.btn{border:1px solid #cbd5e1;border-radius:9px;background:#fff;color:#334155;padding:8px 12px;font-weight:600}.btn:hover{background:#f8fafc}.btn-primary{background:var(--blue);color:#fff;border-color:var(--blue)}.btn-primary:hover{background:var(--blue-dark)}.btn-danger{color:#b91c1c;border-color:#fecaca}.btn-small{padding:4px 8px;font-size:.82rem}.note{color:#1e40af;background:#eff6ff;border:1px solid #bfdbfe;padding:10px 14px;border-radius:10px;margin-top:14px;font-size:.88rem}.statusbar{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:10px 18px;background:#f8fafc;color:var(--muted);font-size:.88rem}.calendar-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;table-layout:fixed}th,td{border-bottom:1px solid var(--line);border-right:1px solid var(--line);padding:10px;vertical-align:top}th:last-child,td:last-child{border-right:0}th{background:#f8fafc;color:#475569;font-size:.84rem;text-align:left}.date-col{width:76px}.weekday-col{width:52px}.date-cell{font-weight:750;white-space:nowrap}.weekday{font-weight:700}.sun{color:#dc2626}.sat{color:#2563eb}tr.today{background:#eff6ff}tr.today .date-cell::after{content:"今日";display:block;width:fit-content;margin-top:3px;font-size:.68rem;color:#1d4ed8;background:#dbeafe;border-radius:4px;padding:1px 5px}.day-content{min-height:42px}.entry{border-left:4px solid var(--entry-color,#94a3b8);background:var(--entry-bg,#f8fafc);border-radius:6px;padding:6px 8px;margin:0 0 6px;font-size:.88rem;overflow-wrap:anywhere}.entry:last-child{margin-bottom:0}.entry-title{font-weight:700}.entry-meta{font-size:.75rem;color:#64748b;margin-top:2px}.entry-actions{display:flex;gap:5px;margin-top:5px}.empty{color:#94a3b8;font-size:.82rem}.board-list{padding:14px 18px;display:grid;gap:10px}.board-post{border:1px solid var(--line);border-radius:10px;padding:12px}.post-head{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}.author{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:.88rem}.dot{width:10px;height:10px;border-radius:50%;display:inline-block}.post-date{color:var(--muted);font-size:.78rem}.post-body{white-space:pre-wrap;overflow-wrap:anywhere;margin:8px 0 0}.form{padding:0 18px 18px;display:grid;gap:9px}.field{display:grid;gap:5px}.field label{font-size:.86rem;font-weight:700;color:#475569}input,textarea,select{width:100%;border:1px solid #cbd5e1;border-radius:8px;padding:9px 10px;background:#fff;color:var(--text)}textarea{min-height:88px;resize:vertical}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.legend{display:flex;gap:12px;flex-wrap:wrap;padding:12px 18px;border-top:1px solid var(--line)}.legend-item{display:flex;align-items:center;gap:6px;font-size:.82rem;color:#475569}.footer{color:#94a3b8;font-size:.78rem;text-align:center;padding:18px 0 8px}dialog{border:0;border-radius:14px;padding:0;width:min(540px,calc(100% - 24px));box-shadow:0 20px 60px rgba(15,23,42,.25)}dialog::backdrop{background:rgba(15,23,42,.45)}.modal-head{padding:16px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:10px}.modal-head h3{margin:0}.modal-body{padding:18px;display:grid;gap:12px}.modal-actions{display:flex;justify-content:flex-end;gap:8px;padding-top:4px}.mobile-hint{display:none;color:var(--muted);font-size:.78rem;padding:8px 12px 0}.error{color:#b91c1c;background:#fef2f2;border:1px solid #fecaca;padding:9px 11px;border-radius:8px;font-size:.88rem}.hidden{display:none!important}@media(max-width:720px){.app{padding:10px}.hero{padding:18px;border-radius:12px}.panel-head{padding:12px}.month-label{min-width:125px;font-size:1rem}th,td{padding:7px 6px}.date-col{width:58px}.weekday-col{width:34px}th{font-size:.75rem}.entry{font-size:.82rem;padding:5px 6px}.entry-meta{font-size:.7rem}.grid{grid-template-columns:1fr}}@media(max-width:520px){.calendar-wrap table{min-width:640px}.mobile-hint{display:block}.header-actions .btn{padding:7px 9px;font-size:.85rem}}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5}button,input,textarea,select{font:inherit}button{cursor:pointer}.app{max-width:1180px;margin:0 auto;padding:18px}.hero{background:linear-gradient(135deg,#2563eb,#1e40af);color:#fff;border-radius:16px;padding:22px 24px;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}.hero h1{margin:0;font-size:clamp(1.35rem,3vw,1.8rem)}.hero p{margin:4px 0 0;color:#dbeafe;font-size:.92rem}.header-actions,.month-controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);margin-top:16px;overflow:hidden}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 18px;border-bottom:1px solid var(--line);flex-wrap:wrap}.panel-head h2{margin:0;font-size:1.08rem}.month-label{min-width:145px;text-align:center;font-weight:750;font-size:1.1rem}.btn{border:1px solid #cbd5e1;border-radius:9px;background:#fff;color:#334155;padding:8px 12px;font-weight:600}.btn:hover{background:#f8fafc}.btn-primary{background:var(--blue);color:#fff;border-color:var(--blue)}.btn-primary:hover{background:var(--blue-dark)}.btn-danger{color:#b91c1c;border-color:#fecaca}.btn-small{padding:4px 8px;font-size:.82rem}.note{color:#1e40af;background:#eff6ff;border:1px solid #bfdbfe;padding:10px 14px;border-radius:10px;margin-top:14px;font-size:.88rem}.statusbar{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:10px 18px;background:#f8fafc;color:var(--muted);font-size:.88rem}.calendar-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;table-layout:fixed}th,td{border-bottom:1px solid var(--line);border-right:1px solid var(--line);padding:10px;vertical-align:top}th:last-child,td:last-child{border-right:0}th{background:#f8fafc;color:#475569;font-size:.84rem;text-align:left}.date-col{width:76px}.weekday-col{width:52px}.date-cell{font-weight:750;white-space:nowrap}.weekday{font-weight:700}.sun{color:#dc2626}.sat{color:#2563eb}tr.today{background:#eff6ff}tr.today .date-cell::after{content:"今日";display:block;width:fit-content;margin-top:3px;font-size:.68rem;color:#1d4ed8;background:#dbeafe;border-radius:4px;padding:1px 5px}.day-content{min-height:42px}.entry{border-left:4px solid var(--entry-color,#94a3b8);background:#f8fafc;border-radius:6px;padding:6px 8px;margin:0 0 6px;font-size:.88rem;overflow-wrap:anywhere}.entry-title{font-weight:700}.entry-meta{font-size:.75rem;color:#64748b;margin-top:2px}.entry-actions{display:flex;gap:5px;margin-top:5px}.empty{color:#94a3b8;font-size:.82rem}.board-list{padding:14px 18px;display:grid;gap:10px}.board-post{border:1px solid var(--line);border-radius:10px;padding:12px}.post-head{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}.author{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:.88rem}.dot{width:10px;height:10px;border-radius:50%;display:inline-block}.post-date{color:var(--muted);font-size:.78rem}.post-body{white-space:pre-wrap;overflow-wrap:anywhere;margin:8px 0 0}.form{padding:0 18px 18px;display:grid;gap:9px}.field{display:grid;gap:5px}.field label{font-size:.86rem;font-weight:700;color:#475569}input,textarea,select{width:100%;border:1px solid #cbd5e1;border-radius:8px;padding:9px 10px;background:#fff;color:var(--text)}textarea{min-height:88px;resize:vertical}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.legend{display:flex;gap:12px;flex-wrap:wrap;padding:12px 18px;border-top:1px solid var(--line)}.legend-item{display:flex;align-items:center;gap:6px;font-size:.82rem;color:#475569}.footer{color:#94a3b8;font-size:.78rem;text-align:center;padding:18px 0 8px}dialog{border:0;border-radius:14px;padding:0;width:min(540px,calc(100% - 24px));box-shadow:0 20px 60px rgba(15,23,42,.25)}dialog::backdrop{background:rgba(15,23,42,.45)}.modal-head{padding:16px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:10px}.modal-head h3{margin:0}.modal-body{padding:18px;display:grid;gap:12px}.modal-actions{display:flex;justify-content:flex-end;gap:8px;padding-top:4px}.mobile-hint{display:none;color:var(--muted);font-size:.78rem;padding:8px 12px 0}.error{color:#b91c1c;background:#fef2f2;border:1px solid #fecaca;padding:9px 11px;border-radius:8px;font-size:.88rem}.hidden{display:none!important}@media(max-width:720px){.app{padding:10px}.hero{padding:18px;border-radius:12px}.panel-head{padding:12px}.month-label{min-width:125px;font-size:1rem}th,td{padding:7px 6px}.date-col{width:58px}.weekday-col{width:34px}th{font-size:.75rem}.entry{font-size:.82rem;padding:5px 6px}.entry-meta{font-size:.7rem}.grid{grid-template-columns:1fr}}@media(max-width:520px){.calendar-wrap table{min-width:640px}.mobile-hint{display:block}.header-actions .btn{padding:7px 9px;font-size:.85rem}}
   </style>
 </head>
 <body>
   <main class="app">
-    <header class="hero"><div><h1>友人共有カレンダー</h1><p>友人との予定・連絡事項をひとつに</p></div><div class="header-actions"><span id="authStatus" aria-live="polite">接続中...</span><button class="btn hidden" id="loginBtn" type="button">ログイン</button><button class="btn hidden" id="logoutBtn" type="button">ログアウト</button><button class="btn btn-primary" id="addEventBtn" type="button" disabled>＋ 予定を追加</button></div></header>
-    <div class="note"><strong>Supabase共有版：</strong>予定・連絡事項はログインした参加者間で共有されます。参加者アカウントはSupabase管理画面から作成し、知らない人が登録できないようにしてください。公開URLとpublishable/anon keyはブラウザで使う前提ですが、service_role keyは絶対に設定しないでください。</div>
-    <section class="panel" aria-labelledby="calendarHeading"><div class="panel-head"><h2 id="calendarHeading">月間予定</h2><div class="month-controls"><button class="btn" id="prevMonth" aria-label="前月">‹ 前月</button><div class="month-label" id="monthLabel"></div><button class="btn" id="nextMonth" aria-label="次月">次月 ›</button><button class="btn" id="todayBtn">今月</button></div></div><div class="statusbar"><span id="dataStatus">共有データを読み込みます</span><span>ログインすると予定・連絡を追加、編集できます</span></div><div class="mobile-hint">スマホでは表を左右にスクロールできます。</div><div class="calendar-wrap"><table><thead><tr><th class="date-col">日付</th><th class="weekday-col">曜</th><th>予定</th><th>連絡事項</th></tr></thead><tbody id="calendarBody"></tbody></table></div><div class="legend" id="legend"></div></section>
-    <section class="panel" aria-labelledby="boardHeading"><div class="panel-head"><h2 id="boardHeading">連絡ボード</h2><span class="post-date">伝言・お知らせ</span></div><div class="board-list" id="boardList"></div><form class="form" id="boardForm"><div class="grid"><div class="field"><label for="boardName">投稿者名</label><input id="boardName" maxlength="30" required placeholder="例：さくら" disabled></div><div class="field"><label for="boardColor">表示色</label><select id="boardColor" disabled><option value="#2563eb">青</option><option value="#16a34a">緑</option><option value="#dc2626">赤</option><option value="#ca8a04">黄</option><option value="#9333ea">紫</option></select></div></div><div class="field"><label for="boardText">投稿内容</label><textarea id="boardText" maxlength="1500" required placeholder="ログインすると投稿できます" disabled></textarea></div><div><button class="btn btn-primary" id="boardSubmit" type="submit" disabled>投稿する</button></div></form></section>
+    <header class="hero"><div><h1>友人共有カレンダー</h1><p>友人との予定・連絡事項をひとつに</p></div><div class="header-actions"><span id="authStatus" aria-live="polite">接続中...</span><span id="profileBadge" class="hidden"></span><button class="btn hidden" id="loginBtn" type="button">ログイン</button><button class="btn hidden" id="logoutBtn" type="button">ログアウト</button><button class="btn btn-primary" id="addEventBtn" type="button" disabled>＋ 予定を追加</button></div></header>
+    <div class="note"><strong>Supabase共有版：</strong>参加者名・色はメンバー設定から固定で読み込みます。予定と掲示板はログインした参加者間で共有されます。</div>
+    <section class="panel" aria-labelledby="calendarHeading"><div class="panel-head"><h2 id="calendarHeading">月間予定</h2><div class="month-controls"><button class="btn" id="prevMonth" aria-label="前月">‹ 前月</button><div class="month-label" id="monthLabel"></div><button class="btn" id="nextMonth" aria-label="次月">次月 ›</button><button class="btn" id="todayBtn">今月</button></div></div><div class="statusbar"><span id="dataStatus">共有データを読み込みます</span><span>自分が登録した予定・投稿を編集できます</span></div><div class="mobile-hint">スマホでは表を左右にスクロールできます。</div><div class="calendar-wrap"><table><thead><tr><th class="date-col">日付</th><th class="weekday-col">曜</th><th>予定</th><th>連絡事項</th></tr></thead><tbody id="calendarBody"></tbody></table></div><div class="legend" id="legend"></div></section>
+    <section class="panel" aria-labelledby="boardHeading"><div class="panel-head"><h2 id="boardHeading">連絡ボード</h2><span class="post-date">伝言・お知らせ</span></div><div class="board-list" id="boardList"></div><form class="form" id="boardForm"><div class="field"><label>投稿者</label><div id="boardAuthor" class="author">ログインすると投稿できます</div></div><div class="field"><label for="boardText">投稿内容</label><textarea id="boardText" maxlength="1500" required placeholder="友人への伝言を入力..." disabled></textarea></div><div><button class="btn btn-primary" id="boardSubmit" type="submit" disabled>投稿する</button></div></form></section>
     <div class="footer">友人共有カレンダー — Supabase連携</div>
   </main>
 
   <dialog id="loginDialog"><form id="loginForm"><div class="modal-head"><h3>友人アカウントでログイン</h3><button class="btn btn-small" type="button" id="closeLogin">閉じる</button></div><div class="modal-body"><p>参加者として登録されたメールアドレスでログインしてください。</p><div class="field"><label for="loginEmail">メールアドレス</label><input id="loginEmail" type="email" autocomplete="username" required></div><div class="field"><label for="loginPassword">パスワード</label><input id="loginPassword" type="password" autocomplete="current-password" required></div><div id="loginError" class="error hidden"></div><div class="modal-actions"><button class="btn" type="button" id="cancelLogin">キャンセル</button><button class="btn btn-primary" id="submitLogin" type="submit">ログイン</button></div></div></form></dialog>
-  <dialog id="eventDialog"><form id="eventForm"><div class="modal-head"><h3 id="eventDialogTitle">予定を追加</h3><button class="btn btn-small" type="button" id="closeEvent">閉じる</button></div><div class="modal-body"><div class="field"><label for="eventDate">日付</label><input type="date" id="eventDate" required></div><div class="field"><label for="eventType">種類</label><select id="eventType"><option value="event">予定</option><option value="notice">連絡事項</option></select></div><div class="field"><label for="eventTitle">タイトル</label><input id="eventTitle" maxlength="100" required placeholder="例：ランチ、映画、集合場所"></div><div class="field"><label for="eventDetails">詳細（任意）</label><textarea id="eventDetails" maxlength="1500" placeholder="場所や補足など"></textarea></div><div class="grid"><div class="field"><label for="eventTime">時間（任意）</label><input id="eventTime" type="time"></div><div class="field"><label for="eventColor">表示色</label><select id="eventColor"><option value="#2563eb">青</option><option value="#16a34a">緑</option><option value="#dc2626">赤</option><option value="#ca8a04">黄</option><option value="#9333ea">紫</option></select></div></div><div class="modal-actions"><button class="btn" type="button" id="cancelEvent">キャンセル</button><button class="btn btn-primary" type="submit">保存</button></div></div></form></dialog>
+  <dialog id="eventDialog"><form id="eventForm"><div class="modal-head"><h3 id="eventDialogTitle">予定を追加</h3><button class="btn btn-small" type="button" id="closeEvent">閉じる</button></div><div class="modal-body"><div class="field"><label for="eventDate">日付</label><input type="date" id="eventDate" required></div><div class="field"><label for="eventType">種類</label><select id="eventType"><option value="event">予定</option><option value="notice">連絡事項</option></select></div><div class="field"><label for="eventTitle">タイトル</label><input id="eventTitle" maxlength="100" required placeholder="例：ランチ、映画、集合場所"></div><div class="field"><label for="eventDetails">詳細（任意）</label><textarea id="eventDetails" maxlength="1500" placeholder="場所や補足など"></textarea></div><div class="field"><label for="eventTime">時間（任意）</label><input type="time" id="eventTime"></div><div class="modal-actions"><button class="btn" type="button" id="cancelEvent">キャンセル</button><button class="btn btn-primary" type="submit">保存</button></div></div></form></dialog>
+  <dialog id="postEditDialog"><form id="postEditForm"><div class="modal-head"><h3>掲示板投稿を編集</h3><button class="btn btn-small" type="button" id="closePostEdit">閉じる</button></div><div class="modal-body"><div class="field"><label for="editPostText">投稿内容</label><textarea id="editPostText" maxlength="1500" required></textarea></div><div class="modal-actions"><button class="btn" type="button" id="cancelPostEdit">キャンセル</button><button class="btn btn-primary" type="submit">更新</button></div></div></form></dialog>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
@@ -29,23 +30,31 @@
     const ROOM_ID = "11111111-1111-4111-8111-111111111111";
     const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
     const $ = id => document.getElementById(id);
-    const COLORS = new Set(["#2563eb","#16a34a","#dc2626","#ca8a04","#9333ea"]);
-    let events = [], posts = [], viewDate = new Date(), currentUser = null, editingId = null, channel = null;
+    const ALLOWED_COLORS = new Set(["#2563eb","#16a34a","#dc2626","#ca8a04","#9333ea"]);
+    let events = [], posts = [], viewDate = new Date(), currentUser = null, profile = null, editingId = null, editingPostId = null, channel = null;
     viewDate = new Date(viewDate.getFullYear(), viewDate.getMonth(), 1);
     const escapeHtml = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-    const safeColor = value => COLORS.has(value) ? value : "#64748b";
+    const safeColor = value => ALLOWED_COLORS.has(value) ? value : "#64748b";
     const dateKey = date => `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,"0")}-${String(date.getDate()).padStart(2,"0")}`;
     function setStatus(message) { $("dataStatus").textContent = message; }
     function updateAuthUI() {
-      const loggedIn = !!currentUser;
-      $("authStatus").textContent = loggedIn ? `ログイン中：${currentUser.email}` : "未ログイン（閲覧のみ）";
-      $("loginBtn").classList.toggle("hidden", loggedIn);
-      $("logoutBtn").classList.toggle("hidden", !loggedIn);
+      const loggedIn = !!currentUser && !!profile;
+      $("authStatus").textContent = currentUser && !profile ? "メンバー設定が必要です" : loggedIn ? `ログイン中：${profile.display_name}` : "未ログイン（閲覧のみ）";
+      $("loginBtn").classList.toggle("hidden", !!currentUser);
+      $("logoutBtn").classList.toggle("hidden", !currentUser);
       $("addEventBtn").disabled = !loggedIn;
-      $("boardName").disabled = !loggedIn;
-      $("boardColor").disabled = !loggedIn;
       $("boardText").disabled = !loggedIn;
       $("boardSubmit").disabled = !loggedIn;
+      $("boardAuthor").textContent = profile ? profile.display_name : "ログインすると投稿できます";
+      $("profileBadge").classList.toggle("hidden", !profile);
+      if (profile) { $("profileBadge").innerHTML = `<span class="dot" style="background:${safeColor(profile.display_color)}"></span>${escapeHtml(profile.display_name)}`; }
+    }
+    async function loadProfile() {
+      profile = null;
+      if (!currentUser) return;
+      const {data,error} = await supabaseClient.from("friends_calendar_members").select("display_name, display_color").eq("group_id",ROOM_ID).eq("user_id",currentUser.id).maybeSingle();
+      if (error) { console.error(error); setStatus("参加者プロフィールを読めません。SQLのプロフィール列とRLSを確認してください。"); return; }
+      if (data?.display_name) profile = {display_name:data.display_name,display_color:safeColor(data.display_color)};
     }
     function renderCalendar() {
       const year = viewDate.getFullYear(), month = viewDate.getMonth();
@@ -63,113 +72,48 @@
     }
     function renderEntries(items) {
       if (!items.length) return '<span class="empty">—</span>';
-      return items.map(item => `<div class="entry" style="--entry-color:${safeColor(item.author_color)};--entry-bg:#eff6ff"><div class="entry-title">${item.start_time ? `${escapeHtml(String(item.start_time).slice(0,5))} ` : ""}${escapeHtml(item.title)}</div>${item.description ? `<div>${escapeHtml(item.description).replace(/\n/g,"<br>")}</div>` : ""}<div class="entry-meta">${escapeHtml(item.author_name || "友人")}</div>${currentUser ? `<div class="entry-actions"><button class="btn btn-small" type="button" data-action="edit" data-id="${escapeHtml(item.id)}">編集</button><button class="btn btn-small btn-danger" type="button" data-action="delete" data-id="${escapeHtml(item.id)}">削除</button></div>` : ""}</div>`).join("");
+      return items.map(item => {
+        const mine = !!currentUser && item.author_id === currentUser.id;
+        return `<div class="entry" style="--entry-color:${safeColor(item.author_color)}"><div class="entry-title">${item.start_time ? `${escapeHtml(String(item.start_time).slice(0,5))} ` : ""}${escapeHtml(item.title)}</div>${item.description ? `<div>${escapeHtml(item.description).replace(/\n/g,"<br>")}</div>` : ""}<div class="entry-meta">${escapeHtml(item.author_name || "友人")}</div>${mine ? `<div class="entry-actions"><button class="btn btn-small" type="button" data-action="edit" data-id="${escapeHtml(item.id)}">編集</button><button class="btn btn-small btn-danger" type="button" data-action="delete" data-id="${escapeHtml(item.id)}">削除</button></div>` : ""}</div>`;
+      }).join("");
     }
     function renderLegend() {
-      const people = new Map(); events.forEach(item => { if (item.author_name) people.set(item.author_name, safeColor(item.author_color)); });
-      $("legend").innerHTML = people.size ? [...people].map(([name,color])=>`<span class="legend-item"><span class="dot" style="background:${color}"></span>${escapeHtml(name)}</span>`).join("") : '<span class="empty">予定を追加すると登録者が表示されます。</span>';
+      const people = new Map(); events.forEach(item => { if (item.author_name) people.set(item.author_name,safeColor(item.author_color)); });
+      $("legend").innerHTML = people.size ? [...people].map(([name,color])=>`<span class="legend-item"><span class="dot" style="background:${color}"></span>${escapeHtml(name)}</span>`).join("") : '<span class="empty">予定を追加すると参加者が表示されます。</span>';
     }
     function renderBoard() {
       const sorted = [...posts].sort((a,b)=>new Date(b.created_at)-new Date(a.created_at));
-      $("boardList").innerHTML = sorted.length ? sorted.map(post=>`<article class="board-post"><div class="post-head"><span class="author"><span class="dot" style="background:${safeColor(post.author_color)}"></span>${escapeHtml(post.author_name || "友人")}</span><span class="post-date">${new Date(post.created_at).toLocaleString("ja-JP")}</span></div><p class="post-body">${escapeHtml(post.content).replace(/\n/g,"<br>")}</p>${currentUser ? `<div class="entry-actions"><button class="btn btn-small btn-danger" type="button" data-post-delete="${escapeHtml(post.id)}">削除</button></div>` : ""}</article>`).join("") : '<div class="empty">まだ投稿はありません。</div>';
+      $("boardList").innerHTML = sorted.length ? sorted.map(post => {
+        const mine = !!currentUser && post.author_id === currentUser.id;
+        return `<article class="board-post"><div class="post-head"><span class="author"><span class="dot" style="background:${safeColor(post.author_color)}"></span>${escapeHtml(post.author_name || "友人")}</span><span class="post-date">${new Date(post.created_at).toLocaleString("ja-JP")}</span></div><p class="post-body">${escapeHtml(post.content).replace(/\n/g,"<br>")}</p>${mine ? `<div class="entry-actions"><button class="btn btn-small" type="button" data-post-edit="${escapeHtml(post.id)}">編集</button><button class="btn btn-small btn-danger" type="button" data-post-delete="${escapeHtml(post.id)}">削除</button></div>` : ""}</article>`;
+      }).join("") : '<div class="empty">まだ投稿はありません。</div>';
     }
     async function loadAll() {
-      if (!currentUser) { events = []; posts = []; renderCalendar(); renderBoard(); setStatus("ログインすると共有データを表示します"); return; }
+      if (!currentUser) { events=[];posts=[];renderCalendar();renderBoard();setStatus("ログインすると共有データを表示します");return; }
+      await loadProfile(); updateAuthUI();
+      if (!profile) {events=[];posts=[];renderCalendar();renderBoard();setStatus("メンバー設定がありません。管理者にプロフィール登録を依頼してください。");return;}
       setStatus("共有データを読み込み中...");
-      const [eventResult, postResult] = await Promise.all([
-        supabaseClient.from("friends_calendar_events").select("id, group_id, event_date, type, title, description, start_time, author_id, author_name, author_color, created_at, updated_at").eq("group_id", ROOM_ID).order("event_date").order("start_time"),
-        supabaseClient.from("friends_calendar_posts").select("id, group_id, content, author_id, author_name, author_color, created_at").eq("group_id", ROOM_ID).order("created_at", {ascending:false})
+      const [eventResult,postResult]=await Promise.all([
+        supabaseClient.from("friends_calendar_events").select("id,group_id,event_date,type,title,description,start_time,author_id,author_name,author_color,created_at,updated_at").eq("group_id",ROOM_ID).order("event_date").order("start_time"),
+        supabaseClient.from("friends_calendar_posts").select("id,group_id,content,author_id,author_name,author_color,created_at").eq("group_id",ROOM_ID).order("created_at",{ascending:false})
       ]);
-      if (eventResult.error || postResult.error) {
-        const error = eventResult.error || postResult.error;
-        console.error(error); setStatus("Supabaseから読み込めません。SQL設定とRLSを確認してください。"); return;
-      }
-      events = eventResult.data || []; posts = postResult.data || [];
-      renderCalendar(); renderBoard(); setStatus(`共有中：予定 ${events.length}件・連絡 ${posts.length}件`);
+      if(eventResult.error||postResult.error){const error=eventResult.error||postResult.error;console.error(error);setStatus("Supabaseから読み込めません。SQL設定とRLSを確認してください。");return;}
+      events=eventResult.data||[];posts=postResult.data||[];renderCalendar();renderBoard();setStatus(`共有中：予定 ${events.length}件・連絡 ${posts.length}件`);
     }
-    function subscribeRealtime() {
-      if (channel) supabaseClient.removeChannel(channel);
-      if (!currentUser) return;
-      channel = supabaseClient.channel("friends-calendar-changes")
-        .on("postgres_changes", {event:"*", schema:"public", table:"friends_calendar_events", filter:`group_id=eq.${ROOM_ID}`}, loadAll)
-        .on("postgres_changes", {event:"*", schema:"public", table:"friends_calendar_posts", filter:`group_id=eq.${ROOM_ID}`}, loadAll)
-        .subscribe();
-    }
-    function openEventDialog(item=null, date=dateKey(new Date())) {
-      if (!currentUser) return;
-      editingId = item?.id ?? null;
-      $("eventDialogTitle").textContent = item ? "予定を編集" : "予定を追加";
-      $("eventDate").value = item?.event_date || date;
-      $("eventType").value = item?.type || "event";
-      $("eventTitle").value = item?.title || "";
-      $("eventDetails").value = item?.description || "";
-      $("eventTime").value = item?.start_time ? String(item.start_time).slice(0,5) : "";
-      $("eventColor").value = safeColor(item?.author_color || "#2563eb");
-      $("eventDialog").showModal();
-    }
-    $("calendarBody").addEventListener("click", async e => {
-      const button = e.target.closest("button[data-action]"); if (!button || !currentUser) return;
-      const item = events.find(x=>String(x.id)===button.dataset.id); if (!item) return;
-      if (button.dataset.action === "edit") openEventDialog(item);
-      if (button.dataset.action === "delete" && confirm("この予定を削除しますか？")) {
-        const {error} = await supabaseClient.from("friends_calendar_events").delete().eq("id", item.id).eq("group_id", ROOM_ID);
-        if (error) alert("削除に失敗しました："+error.message); else await loadAll();
-      }
-    });
-    $("eventForm").addEventListener("submit", async e => {
-      e.preventDefault(); if (!currentUser) return;
-      const record = {group_id:ROOM_ID,event_date:$("eventDate").value,type:$("eventType").value,title:$("eventTitle").value.trim(),description:$("eventDetails").value.trim(),start_time:$("eventTime").value || null,author_id:currentUser.id,author_name:$("boardName").value.trim() || currentUser.email.split("@")[0],author_color:safeColor($("eventColor").value),updated_at:new Date().toISOString()};
-      if (!record.event_date || !record.title) return;
-      const result = editingId
-        ? await supabaseClient.from("friends_calendar_events").update(record).eq("id",editingId).eq("group_id",ROOM_ID)
-        : await supabaseClient.from("friends_calendar_events").insert(record);
-      if (result.error) { alert("保存に失敗しました："+result.error.message); return; }
-      $("boardName").value = record.author_name; $("boardColor").value = record.author_color;
-      $("eventDialog").close(); await loadAll();
-    });
-    $("boardForm").addEventListener("submit", async e => {
-      e.preventDefault(); if (!currentUser) return;
-      const authorName = $("boardName").value.trim() || currentUser.email.split("@")[0], content = $("boardText").value.trim(); if (!content) return;
-      const {error} = await supabaseClient.from("friends_calendar_posts").insert({group_id:ROOM_ID,content,author_id:currentUser.id,author_name:authorName,author_color:safeColor($("boardColor").value)});
-      if (error) { alert("投稿に失敗しました："+error.message); return; }
-      $("boardText").value = ""; await loadAll();
-    });
-    $("boardList").addEventListener("click", async e => {
-      const button = e.target.closest("[data-post-delete]"); if (!button || !currentUser) return;
-      if (!confirm("この投稿を削除しますか？")) return;
-      const {error} = await supabaseClient.from("friends_calendar_posts").delete().eq("id",button.dataset.postDelete).eq("group_id",ROOM_ID);
-      if (error) alert("削除に失敗しました："+error.message); else await loadAll();
-    });
-    $("loginBtn").addEventListener("click",()=>{$("loginError").classList.add("hidden");$("loginForm").reset();$("loginDialog").showModal();});
-    $("closeLogin").addEventListener("click",()=>$("loginDialog").close());
-    $("cancelLogin").addEventListener("click",()=>$("loginDialog").close());
-    $("loginForm").addEventListener("submit",async e=>{
-      e.preventDefault(); const button=$("submitLogin"), errorBox=$("loginError"); button.disabled=true; button.textContent="ログイン中..."; errorBox.classList.add("hidden");
-      const {data,error}=await supabaseClient.auth.signInWithPassword({email:$("loginEmail").value.trim(),password:$("loginPassword").value});
-      if(error){errorBox.textContent=error.message;errorBox.classList.remove("hidden");}
-      else{$("loginDialog").close();currentUser=data.user;updateAuthUI();await loadAll();subscribeRealtime();}
-      button.disabled=false;button.textContent="ログイン";
-    });
-    $("logoutBtn").addEventListener("click",async()=>{const {error}=await supabaseClient.auth.signOut();if(error){alert("ログアウトできませんでした："+error.message);return;}currentUser=null;if(channel){await supabaseClient.removeChannel(channel);channel=null;}updateAuthUI();await loadAll();});
-    $("addEventBtn").addEventListener("click",()=>openEventDialog());
-    $("closeEvent").addEventListener("click",()=>$("eventDialog").close());
-    $("cancelEvent").addEventListener("click",()=>$("eventDialog").close());
-    $("prevMonth").addEventListener("click",()=>{viewDate=new Date(viewDate.getFullYear(),viewDate.getMonth()-1,1);renderCalendar();});
-    $("nextMonth").addEventListener("click",()=>{viewDate=new Date(viewDate.getFullYear(),viewDate.getMonth()+1,1);renderCalendar();});
-    $("todayBtn").addEventListener("click",()=>{const now=new Date();viewDate=new Date(now.getFullYear(),now.getMonth(),1);renderCalendar();});
-    supabaseClient.auth.onAuthStateChange((_event,session)=>{
-      const nextUser=session?.user || null;
-      if(currentUser?.id===nextUser?.id) return;
-      currentUser=nextUser; updateAuthUI();
-      if(currentUser){loadAll();subscribeRealtime();} else {if(channel){supabaseClient.removeChannel(channel);channel=null;}loadAll();}
-    });
-    async function init(){
-      updateAuthUI();renderCalendar();renderBoard();
-      const {data,error}=await supabaseClient.auth.getSession();
-      if(error){setStatus("Supabase認証に接続できません："+error.message);return;}
-      currentUser=data.session?.user||null;updateAuthUI();
-      if(currentUser){await loadAll();subscribeRealtime();}else{await loadAll();$("loginBtn").classList.remove("hidden");}
-    }
+    function subscribeRealtime(){if(channel)supabaseClient.removeChannel(channel);if(!currentUser)return;channel=supabaseClient.channel("friends-calendar-changes").on("postgres_changes",{event:"*",schema:"public",table:"friends_calendar_events",filter:`group_id=eq.${ROOM_ID}`},loadAll).on("postgres_changes",{event:"*",schema:"public",table:"friends_calendar_posts",filter:`group_id=eq.${ROOM_ID}`},loadAll).subscribe();}
+    function openEventDialog(item=null,date=dateKey(new Date())){if(!currentUser||!profile)return;editingId=item?.id??null;$("eventDialogTitle").textContent=item?"予定を編集":"予定を追加";$("eventDate").value=item?.event_date||date;$("eventType").value=item?.type||"event";$("eventTitle").value=item?.title||"";$("eventDetails").value=item?.description||"";$("eventTime").value=item?.start_time?String(item.start_time).slice(0,5):"";$("eventDialog").showModal();}
+    $("calendarBody").addEventListener("click",async e=>{const button=e.target.closest("button[data-action]");if(!button||!currentUser)return;const item=events.find(x=>String(x.id)===button.dataset.id);if(!item||item.author_id!==currentUser.id)return;if(button.dataset.action==="edit")openEventDialog(item);if(button.dataset.action==="delete"&&confirm("この予定を削除しますか？")){const {error}=await supabaseClient.from("friends_calendar_events").delete().eq("id",item.id).eq("group_id",ROOM_ID).eq("author_id",currentUser.id);if(error)alert("削除に失敗しました："+error.message);else await loadAll();}});
+    $("eventForm").addEventListener("submit",async e=>{e.preventDefault();if(!currentUser||!profile)return;const record={group_id:ROOM_ID,event_date:$("eventDate").value,type:$("eventType").value,title:$("eventTitle").value.trim(),description:$("eventDetails").value.trim(),start_time:$("eventTime").value||null,updated_at:new Date().toISOString()};if(!record.event_date||!record.title)return;const result=editingId?await supabaseClient.from("friends_calendar_events").update(record).eq("id",editingId).eq("group_id",ROOM_ID).eq("author_id",currentUser.id):await supabaseClient.from("friends_calendar_events").insert({...record,author_id:currentUser.id,author_name:profile.display_name,author_color:profile.display_color});if(result.error){alert("保存に失敗しました："+result.error.message);return;}$("eventDialog").close();await loadAll();});
+    $("boardForm").addEventListener("submit",async e=>{e.preventDefault();if(!currentUser||!profile)return;const content=$("boardText").value.trim();if(!content)return;const {error}=await supabaseClient.from("friends_calendar_posts").insert({group_id:ROOM_ID,content,author_id:currentUser.id,author_name:profile.display_name,author_color:profile.display_color});if(error){alert("投稿に失敗しました："+error.message);return;}$("boardText").value="";await loadAll();});
+    $("boardList").addEventListener("click",async e=>{const edit=e.target.closest("[data-post-edit]");if(edit){const post=posts.find(p=>String(p.id)===edit.dataset.postEdit);if(!post||post.author_id!==currentUser?.id)return;editingPostId=post.id;$("editPostText").value=post.content;$("postEditDialog").showModal();return;}const remove=e.target.closest("[data-post-delete]");if(!remove)return;const post=posts.find(p=>String(p.id)===remove.dataset.postDelete);if(!post||post.author_id!==currentUser?.id||!confirm("この投稿を削除しますか？"))return;const {error}=await supabaseClient.from("friends_calendar_posts").delete().eq("id",post.id).eq("group_id",ROOM_ID).eq("author_id",currentUser.id);if(error)alert("削除に失敗しました："+error.message);else await loadAll();});
+    $("postEditForm").addEventListener("submit",async e=>{e.preventDefault();const post=posts.find(p=>String(p.id)===String(editingPostId));if(!post||post.author_id!==currentUser?.id)return;const content=$("editPostText").value.trim();if(!content)return;const {error}=await supabaseClient.from("friends_calendar_posts").update({content}).eq("id",editingPostId).eq("group_id",ROOM_ID).eq("author_id",currentUser.id);if(error){alert("投稿の更新に失敗しました："+error.message);return;}$("postEditDialog").close();await loadAll();});
+    $("loginBtn").addEventListener("click",()=>{$("loginError").classList.add("hidden");$("loginForm").reset();$("loginDialog").showModal();});$("closeLogin").addEventListener("click",()=>$("loginDialog").close());$("cancelLogin").addEventListener("click",()=>$("loginDialog").close());
+    $("loginForm").addEventListener("submit",async e=>{e.preventDefault();const button=$("submitLogin"),box=$("loginError");button.disabled=true;button.textContent="ログイン中...";box.classList.add("hidden");const {error}=await supabaseClient.auth.signInWithPassword({email:$("loginEmail").value.trim(),password:$("loginPassword").value});if(error){box.textContent=error.message;box.classList.remove("hidden");}else{$("loginDialog").close();}button.disabled=false;button.textContent="ログイン";});
+    $("logoutBtn").addEventListener("click",async()=>{const {error}=await supabaseClient.auth.signOut();if(error)alert("ログアウトできませんでした："+error.message);});
+    $("addEventBtn").addEventListener("click",()=>openEventDialog());$("closeEvent").addEventListener("click",()=>$("eventDialog").close());$("cancelEvent").addEventListener("click",()=>$("eventDialog").close());$("closePostEdit").addEventListener("click",()=>$("postEditDialog").close());$("cancelPostEdit").addEventListener("click",()=>$("postEditDialog").close());
+    $("prevMonth").addEventListener("click",()=>{viewDate=new Date(viewDate.getFullYear(),viewDate.getMonth()-1,1);renderCalendar();});$("nextMonth").addEventListener("click",()=>{viewDate=new Date(viewDate.getFullYear(),viewDate.getMonth()+1,1);renderCalendar();});$("todayBtn").addEventListener("click",()=>{const now=new Date();viewDate=new Date(now.getFullYear(),now.getMonth(),1);renderCalendar();});
+    supabaseClient.auth.onAuthStateChange((_event,session)=>{currentUser=session?.user||null;profile=null;updateAuthUI();if(currentUser){loadAll();subscribeRealtime();}else{if(channel){supabaseClient.removeChannel(channel);channel=null;}loadAll();}});
+    async function init(){updateAuthUI();renderCalendar();renderBoard();const {data,error}=await supabaseClient.auth.getSession();if(error){setStatus("Supabase認証に接続できません："+error.message);return;}currentUser=data.session?.user||null;updateAuthUI();if(currentUser){await loadAll();subscribeRealtime();}else{await loadAll();$("loginBtn").classList.remove("hidden");}}
     init();
   </script>
 </body>
